@@ -1,0 +1,101 @@
+Imports System.Text
+
+Module Module1
+    Sub Main()
+        While True
+            Console.WriteLine("Enter a sequence:")
+            Dim inputSeq As String = Console.ReadLine().ToUpper()
+            Dim dnaSeq As String = TranslateSequence(inputSeq)
+            Console.WriteLine("Input sequence: " + inputSeq)
+            Console.WriteLine("DNA sequence: " + dnaSeq)
+            Console.WriteLine("Translate another sequence? (Y/N)")
+            Dim answer As String = Console.ReadLine().ToUpper()
+            If answer <> "Y" Then
+                Exit While
+            End If
+        End While
+    End Sub
+
+    Function TranslateSequence(inputSeq As String) As String
+        Dim dnaSeq As New StringBuilder()
+        For Each character As Char In inputSeq
+            Select Case character
+                Case "A"c
+                    dnaSeq.Append("CGT")
+                Case "B"c
+                    dnaSeq.Append("TGC")
+                Case "C"c
+                    dnaSeq.Append("ATG")
+                Case "D"c
+                    dnaSeq.Append("GAC")
+                Case "E"c
+                    dnaSeq.Append("AGT")
+                Case "F"c
+                    dnaSeq.Append("GCT")
+                Case "G"c
+                    dnaSeq.Append("CTA")
+                Case "H"c
+                    dnaSeq.Append("TAC")
+                Case "I"c
+                    dnaSeq.Append("ATC")
+                Case "J"c
+                    dnaSeq.Append("CGA")
+                Case "K"c
+                    dnaSeq.Append("TCT")
+                Case "L"c
+                    dnaSeq.Append("ACC")
+                Case "M"c
+                    dnaSeq.Append("ACA")
+                Case "N"c
+                    dnaSeq.Append("TGC")
+                Case "O"c
+                    dnaSeq.Append("GCA")
+                Case "P"c
+                    dnaSeq.Append("TAT")
+                Case "Q"c
+                    dnaSeq.Append("CTG")
+                Case "R"c
+                    dnaSeq.Append("AGC")
+                Case "S"c
+                    dnaSeq.Append("GGC")
+                Case "T"c
+                    dnaSeq.Append("GTA")
+                Case "U"c
+                    dnaSeq.Append("GCC")
+                Case "V"c
+                    dnaSeq.Append("GAG")
+                Case "W"c
+                    dnaSeq.Append("AGA")
+                Case "X"c
+                    dnaSeq.Append("ATA")
+                Case "Y"c
+                    dnaSeq.Append("CTC")
+                Case "Z"c
+                    dnaSeq.Append("ACT")
+                Case "0"c
+                    dnaSeq.Append("CCC")
+                Case "1"c
+                    dnaSeq.Append("TGT")
+                Case "2"c
+                    dnaSeq.Append("GGA")
+                Case "3"c
+                    dnaSeq.Append("CGC")
+                Case "4"c
+                    dnaSeq.Append("TTA")
+                Case "5"c
+                    dnaSeq.Append("GAC")
+                Case "6"c
+                    dnaSeq.Append("GAT")
+                Case "7"c
+                    dnaSeq.Append("TTC")
+                Case "8"c
+                    dnaSeq.Append("AAA")
+                Case "9"c
+                    dnaSeq.Append("CCA")
+                Case Else
+                    dnaSeq.Append("NNN")
+            End Select
+        Next
+        Return dnaSeq.ToString()
+    End Function
+End Module
