@@ -1,0 +1,25 @@
+Module Module1
+    Sub Main()
+        'Ask user to enter deposit amount
+        Console.Write("Enter the deposit amount: ")
+        Dim principal As Decimal = Decimal.Parse(Console.ReadLine())
+
+        'Ask user to enter interest rate
+        Console.Write("Enter the interest rate: ")
+        Dim interestRate As Decimal = Decimal.Parse(Console.ReadLine())
+
+        'Ask user to enter time
+        Console.Write("Enter the number of years: ")
+        Dim time As Integer = Integer.Parse(Console.ReadLine())
+
+        'Calculate interest earned and total value
+        Dim interestEarned As Decimal = principal * interestRate * time
+        Dim totalValue As Decimal = principal + interestEarned
+
+        'Output the results
+        Console.WriteLine("The interest earned over " & time & " years is: $" & interestEarned)
+        Console.WriteLine("The total value of the deposit after " & time & " years is: $" & totalValue)
+
+        Console.ReadLine()
+    End Sub
+End Module
