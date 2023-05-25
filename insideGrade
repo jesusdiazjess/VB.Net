@@ -1,0 +1,16 @@
+Module Module1
+    Sub Main()
+        Dim Grade1 As Integer = 93
+        Dim Grade2 As Integer = 90
+        Dim Grade3 As Integer = 95
+        Dim Grade4 As Integer = 97
+        Dim Grade5 As Integer = 98
+        Dim Grade6 As Integer = 60
+
+        Dim Average As Double = (Grade1 + Grade2 + Grade3 + Grade4 + Grade5 + Grade6) / 6
+
+
+        Console.WriteLine("Average is : {0}", Average)
+        Console.ReadLine()
+    End Sub
+End Module
