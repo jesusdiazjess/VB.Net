@@ -1,0 +1,97 @@
+Imports System.Text
+
+Module Module1
+    Sub Main()
+        While True
+            Console.WriteLine("Enter your DNA sequence here:")
+            Dim dnaSeq As String = Console.ReadLine().ToUpper()
+            Dim englishSeq As String = TranslateDNA(dnaSeq)
+            Console.WriteLine("The DNA sequence you entered: " + dnaSeq)
+            Console.WriteLine("Translated text: " + englishSeq)
+            Console.WriteLine("Do you want to Translate another sequence? (Y/N)")
+            Dim answer As String = Console.ReadLine().ToUpper()
+            If answer <> "Y" Then
+                Exit While
+            End If
+        End While
+    End Sub
+
+    Function TranslateDNA(dnaSeq As String) As String
+        Dim englishSeq As New StringBuilder()
+        For i As Integer = 0 To dnaSeq.Length - 1 Step 3
+            Dim codon As String = dnaSeq.Substring(i, 3)
+            Select Case codon
+                Case "CGT"
+                    englishSeq.Append("A")
+                Case "TGC"
+                    englishSeq.Append("B")
+                Case "ATG"
+                    englishSeq.Append("C")
+                Case "GAC"
+                    englishSeq.Append("D")
+                Case "AGT"
+                    englishSeq.Append("E")
+                Case "GCT"
+                    englishSeq.Append("F")
+                Case "CTA"
+                    englishSeq.Append("G")
+                Case "TAC"
+                    englishSeq.Append("H")
+                Case "ATC"
+                    englishSeq.Append("I")
+                Case "CGA"
+                    englishSeq.Append("J")
+                Case "TCT"
+                    englishSeq.Append("K")
+                Case "ACC"
+                    englishSeq.Append("L")
+                Case "ACA"
+                    englishSeq.Append("M")
+                Case "TGC"
+                    englishSeq.Append("N")
+                Case "GCA"
+                    englishSeq.Append("O")
+                Case "TAT"
+                    englishSeq.Append("P")
+                Case "CTG"
+                    englishSeq.Append("Q")
+                Case "AGC"
+                    englishSeq.Append("R")
+                Case "GGC"
+                    englishSeq.Append("S")
+                Case "GTA"
+                    englishSeq.Append("T")
+                Case "GCC"
+                    englishSeq.Append("U")
+                Case "GAG"
+                    englishSeq.Append("V")
+                Case "AGA"
+                    englishSeq.Append("W")
+                Case "ATA"
+                    englishSeq.Append("X")
+                Case "CTC"
+                    englishSeq.Append("Y")
+                Case "ACT"
+                    englishSeq.Append("Z")
+                Case "   "
+                    englishSeq.Append(" ")
+                Case "---"
+                    englishSeq.Append("-")
+                Case "___"
+                    englishSeq.Append("_")
+                Case "..."
+                    englishSeq.Append(".")
+                Case "''''"
+                    englishSeq.Append("'")
+                Case "!!!"
+                    englishSeq.Append("!")
+                Case "@@@"
+                    englishSeq.Append("@")
+                Case Else
+                    ' invalid codon
+                    englishSeq.Append("?")
+            End Select
+        Next
+        Return englishSeq.ToString()
+    End Function
+End Module
