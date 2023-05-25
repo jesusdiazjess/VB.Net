@@ -1,0 +1,30 @@
+Module Module1
+    Sub Main()
+        Dim firstNum As Integer
+        Dim secondNum As Integer
+        Dim anotherTransaction As String = "Y"
+
+        While anotherTransaction.ToUpper() = "Y"
+            Console.Write("Please Enter the first number:")
+            firstNum = Integer.Parse(Console.ReadLine())
+
+            Console.Write("Again, Enter the second number:")
+            secondNum = Integer.Parse(Console.ReadLine())
+
+            If firstNum > secondNum Then
+                Console.WriteLine("{0} is greater than {1}", firstNum, secondNum)
+            ElseIf firstNum < secondNum Then
+                Console.WriteLine("{0} is less than {1}", firstNum, secondNum)
+            ElseIf firstNum = secondNum Then
+                Console.WriteLine("{0} is equal to {1}", firstNum, secondNum)
+            Else
+                Console.WriteLine("{0} is not equal to {1}", firstNum, secondNum)
+            End If
+
+            Console.WriteLine("Do you want to perform another transaction? (Y/N)")
+            anotherTransaction = Console.ReadLine()
+        End While
+
+        Console.ReadLine()
+    End Sub
+End Module
